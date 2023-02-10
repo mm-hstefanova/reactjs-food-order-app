@@ -5,7 +5,7 @@ import Cart from '../Cart/Cart';
 import { createPortal } from 'react-dom';
 
 const Backdrop = (props) => {
-  return <div className={classes.backdrop} onClick={props.onClick}></div>;
+  return <div className={classes.backdrop} onClick={props.onClose}></div>;
 };
 
 const ModalOverlay = (props) => {
@@ -21,7 +21,7 @@ const portalElement = document.getElementById('modal');
 const Modal = (props) => {
   return (
     <>
-      {createPortal(<Backdrop />, portalElement)}
+      {createPortal(<Backdrop onClose={props.onClose} />, portalElement)}
 
       {createPortal(
         <ModalOverlay>{props.children}</ModalOverlay>,

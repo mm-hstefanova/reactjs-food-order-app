@@ -1,12 +1,13 @@
 import mealsImage from '../../assets/meals.jpg';
 import classes from './Header.module.css';
-import HeaderCartIcon from './HeaderCartButton';
+import HeaderCartButton from './HeaderCartButton';
+
 const Header = (props) => {
   return (
     <>
       <header className={classes.header}>
         <h1>ReactMeals</h1>
-        <HeaderCartIcon />
+        <HeaderCartButton onShowModal={props.onShowModal} />
       </header>
 
       <div className={classes.intro}>
