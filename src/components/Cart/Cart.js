@@ -10,7 +10,10 @@ const Cart = (props) => {
   const hasItems = context.items.length > 0;
 
   const cartItemAddHandler = (item) => {
-    context.addItem(item);
+    context.addItem({
+      ...item,
+      amount: 1,
+    });
   };
   const cartItemRemoveHandler = (id) => {
     context.removeItem(id);
